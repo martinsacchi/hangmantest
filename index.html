@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hangman Game</h1>
+        <div class="game-container">
+            <div class="hangman-container">
+                <svg height="250" width="200" class="hangman-figure">
+                    <!-- Hangman Stand -->
+                    <line x1="60" y1="20" x2="140" y2="20" class="figure-part stand-top" />
+                    <line x1="140" y1="20" x2="140" y2="50" class="figure-part stand-rope" />
+                    <line x1="60" y1="20" x2="60" y2="230" class="figure-part stand-main" />
+                    <line x1="20" y1="230" x2="100" y2="230" class="figure-part stand-bottom" />
+                    
+                    <!-- Hangman Figure (initially hidden) -->
+                    <circle cx="140" cy="70" r="20" class="figure-part head hidden" />
+                    <line x1="140" y1="90" x2="140" y2="150" class="figure-part body hidden" />
+                    <line x1="140" y1="120" x2="120" y2="100" class="figure-part left-arm hidden" />
+                    <line x1="140" y1="120" x2="160" y2="100" class="figure-part right-arm hidden" />
+                    <line x1="140" y1="150" x2="120" y2="180" class="figure-part left-leg hidden" />
+                    <line x1="140" y1="150" x2="160" y2="180" class="figure-part right-leg hidden" />
+                </svg>
+            </div>
+            <div class="word-container" id="word"></div>
+            <div class="message-container" id="message"></div>
+            <div class="keyboard-container" id="keyboard"></div>
+            <div class="game-controls">
+                <button id="new-game-btn">New Game</button>
+                <div class="difficulty-selector">
+                    <label for="difficulty">Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
