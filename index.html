@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
 </head>
-<body>
-    <div class="container">
-        <h1>Hangman Game</h1>
-        <div class="game-container">
-            <div class="hangman-container">
+<body class="bg-slate-100 text-slate-800 font-sans">
+    <div class="container mx-auto px-4 py-8 max-w-3xl">
+        <h1 class="text-4xl font-bold text-center mb-8 text-indigo-700">Hangman Game</h1>
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+            <div class="flex justify-center mb-6">
                 <svg height="250" width="200" class="hangman-figure">
                     <!-- Hangman Stand -->
                     <line x1="60" y1="20" x2="140" y2="20" class="figure-part stand-top" />
@@ -27,14 +28,16 @@
                     <line x1="140" y1="150" x2="160" y2="180" class="figure-part right-leg hidden" />
                 </svg>
             </div>
-            <div class="word-container" id="word"></div>
-            <div class="message-container" id="message"></div>
-            <div class="keyboard-container" id="keyboard"></div>
-            <div class="game-controls">
-                <button id="new-game-btn">New Game</button>
-                <div class="difficulty-selector">
-                    <label for="difficulty">Difficulty:</label>
-                    <select id="difficulty">
+            <div id="word" class="flex justify-center gap-2 my-8"></div>
+            <div id="message" class="text-center text-xl min-h-8 mb-6"></div>
+            <div id="keyboard" class="flex flex-wrap justify-center gap-2 mb-6"></div>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6">
+                <button id="new-game-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg transition-colors">
+                    New Game
+                </button>
+                <div class="flex items-center gap-3">
+                    <label for="difficulty" class="font-medium">Difficulty:</label>
+                    <select id="difficulty" class="bg-white border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                         <option value="easy">Easy</option>
                         <option value="medium" selected>Medium</option>
                         <option value="hard">Hard</option>
