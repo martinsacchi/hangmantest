@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         keys.forEach(key => {
             const button = document.createElement('button');
-            button.classList.add('w-10', 'h-10', 'rounded-md', 'font-bold', 'uppercase', 'transition-colors', 'bg-gray-200', 'hover:bg-gray-300', 'focus:outline-none', 'focus:ring-2', 'focus:ring-indigo-500');
+            button.classList.add('key');
             button.textContent = key;
             button.id = `key-${key}`;
             button.addEventListener('click', () => handleLetterClick(key));
